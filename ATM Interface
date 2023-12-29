@@ -1,0 +1,84 @@
+import java.util.*;
+class ATMinterface
+{
+    public static double checkBalance=10000.0;
+    public static void main(String[] args) {
+
+        System.out.println("*******************Welcome to ATM Interface**********************");
+        Scanner sc = new Scanner(System.in);
+
+        while(true)
+        {
+            System.out.println("ATM Menue");
+            System.out.println("--------------------------------");
+            System.out.println("1.veiw Bank Balance");
+            System.out.println("2.Deposit Money");
+            System.out.println("3.Withdraw Money");
+            System.out.println("4.Exit");
+            System.out.println("----------------------------------");
+            System.out.print("Enter Your Choice:");
+            int choice=sc.nextInt();
+            switch(choice)
+            {
+                case 1:
+                    checkBalance();
+                    break;
+                
+                case 2:
+                    Deposit();
+                    break;
+                
+                case 3:
+                    withdraw();
+                    break;
+                
+                case 4:
+                    System.out.println("Exitingg ATM... Thank you!!!!");
+                    System.exit(0);
+                    break;
+
+                default:
+                    System.out.println("Enter Valid Choice!!!");
+
+            }
+        }
+        
+    }
+    public static void checkBalance()
+    {
+        System.out.println("Account Bank Balance is: Rs" + checkBalance);
+    }
+    public static void Deposit()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter ammount you want to deposit: Rs");
+        double amount = sc.nextDouble();
+
+        if(amount > 0)
+        {
+            checkBalance += amount;
+            System.out.println("Deposit Successful!!!!!");
+            System.out.println("Your new Bank Balance is: Rs" + checkBalance);
+        }
+        else{
+            System.out.println("Invalid amount please enter valid amount!!!");
+        }
+    }
+    public static void withdraw()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter ammount you want to withdraw: Rs");
+        double amount = sc.nextDouble();
+
+        checkBalance -= amount;
+        if(amount>0)
+        {
+            System.out.println("Withdraw Successful!!!");
+            System.out.println("Your new Bank Balance is" + checkBalance);
+        }
+        else{
+            System.out.println("Invalid amount please enter valid amount!!!");
+        }
+
+    }
+}
