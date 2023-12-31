@@ -1,0 +1,47 @@
+import java.util.*;
+public class StudentCal {
+    public static void main(String[] args) {
+
+    Scanner sc = new Scanner(System.in);
+    
+    System.out.println("****************Student Grade Calculator******************");
+
+    System.out.println("Enter the Marks of PHP:");
+    int php = sc.nextInt();
+    System.out.println("Enter the Marks of Android:");
+    int Android = sc.nextInt();
+    System.out.println("Enter the Marks of Java:");
+    int java = sc.nextInt();
+    System.out.println("Enter the Marks of HTML:");
+    int HTML = sc.nextInt();
+    System.out.println("Enter the Marks of CSS:");
+    int CSS = sc.nextInt();
+
+    float total = php+Android+java+HTML+CSS;
+    System.out.println("Total Marks=" +total);
+
+    float avg = total/5;
+    System.out.println("Percentages marks=" + avg + "%");
+
+    if(avg>=80 && avg<=100)
+    {
+        System.out.println("Grade = A");
+
+    }
+    else if(avg>=60 && avg<=80)
+    {
+        System.out.println("Grade = B");
+    }
+    else if(avg>=40 &&  avg<=60)
+    {
+        System.out.println("Grade = c");
+    }
+    else 
+    {
+        System.out.println("Fail");
+    }
+    
+        
+    }
+    
+}
