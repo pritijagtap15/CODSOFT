@@ -1,0 +1,42 @@
+import java.util.*;
+
+public class number {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // generate the random number
+        Random random = new Random();
+        //Guess the number between 1 to 100
+        int guessNumber = random.nextInt(100);
+
+        System.out.println("******Welcome to Number Gussing Gane******");
+        System.out.println("Guess the Number Between 1 to 100");
+
+        while(true)
+        {
+            // take number from user for gussing
+            System.out.println("Enter the number:");
+            int guess = sc.nextInt();
+
+            if(guess == guessNumber)
+            {
+                System.out.println("Congratulation You Guess The Number Correct!!!");
+                break; // close the loop when your guess is correct
+            }
+
+            // if your gussing number is too low than random generated number
+            else if(guess<guessNumber)
+            {
+                System.out.println("Your Guess Number is too Low Try Again!!");
+            }
+
+            // if your gussing number is too high than random generated number
+            else{
+                System.out.println("Your Guess Number is too High Try Again!!");
+            }
+
+        }
+        sc.close();
+    }
+    
+}
